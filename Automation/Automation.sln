@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI.Core", "Automation.UI.Core", "{A05B2EDC-B0BD-441D-8A7D-386BF5323E29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI.Trulia", "Automation.UI.Trulia", "{1B8F507B-4670-4917-A4F8-A4D27AF59A5E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI", "Automation.UI", "{0B1F2656-303E-415F-85D9-C0E06511CC51}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A05B2EDC-B0BD-441D-8A7D-386BF5323E29} = {0B1F2656-303E-415F-85D9-C0E06511CC51}
+		{1B8F507B-4670-4917-A4F8-A4D27AF59A5E} = {0B1F2656-303E-415F-85D9-C0E06511CC51}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CB269F4-B791-4EBC-A12D-2519A2C9CF8A}
+	EndGlobalSection
+EndGlobal
