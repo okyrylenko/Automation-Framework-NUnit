@@ -52,7 +52,8 @@
   <TestRunParameters>
     <Parameter name="Environment" value="Production" />
     <Parameter name="Browser" value="Chrome" />
-    <Parameter name="Platform" value="Windows" />
+    <Parameter name="Platform" value="Desktop" />
+    <Parameter name ="Location" value="Locally"/>
   </TestRunParameters>
 
   <!-- Adapter Specific sections -->

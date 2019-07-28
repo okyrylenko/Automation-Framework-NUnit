@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
-using System;
 using System.Threading;
-using System.Linq;
-using System.Collections.Generic;
+using Automation.UI.Foudation;
 
 namespace Automation.UI.Trulia.Test
 {
@@ -14,17 +12,8 @@ namespace Automation.UI.Trulia.Test
         [Test]
         public void Test()
         {
-            var env = TestContext.Parameters["Environment"];
-
-            IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json").Build();
-
-            var v = config.GetSection(env)["BaseUrl"];
-            var v1 = config[$"{env}:BaseUrl"];
-            var url = config.GetSection(env).GetChildren().Where(val => val.Key.Equals("BaseUrl")).First().Value;
-
             var driver = new ChromeDriver(@"C:\Users\Alex\Desktop");
-            driver.Navigate().GoToUrl($"https://www.{url}.com");
+            driver.Navigate().GoToUrl($"https://www.{TestSettings.BaseUrl}.com");
             Thread.Sleep(1000);
             driver.Quit();
         }
