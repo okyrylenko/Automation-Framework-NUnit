@@ -17,7 +17,7 @@ namespace Automation.UI.Trulia.Test
             var env = TestContext.Parameters["Environment"];
 
             IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", true,true).Build();
+                .AddJsonFile("appsettings.json").Build();
 
             var v = config.GetSection(env)["BaseUrl"];
             var v1 = config[$"{env}:BaseUrl"];
