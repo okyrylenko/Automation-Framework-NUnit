@@ -12,47 +12,58 @@ namespace Automation.UI.Foudation
         private static Browser browser;
         private static Location location;
         private static Platform platform;
+        private static IConfiguration config = null;
+
+        public static IConfiguration Configuration
+        {
+            get
+            {
+                config = config ?? new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+                return config;
+            }
+        }
 
         public static Browser Browser
         {
             get
             {
-                return browser != Browser.None ? browser :
+                browser = browser != Browser.None ? browser :
                     (Browser)Enum.Parse(typeof(Browser), TestContext.Parameters["Browser"]);
+                return browser;
             }
         }
         public static Enums.Environment Environment
         {
             get
             {
-                return env != Enums.Environment.None ? env :
+                env = env != Enums.Environment.None ? env :
                     (Enums.Environment)Enum.Parse(typeof(Enums.Environment), TestContext.Parameters["Environment"]);
+                return env;
             }
         }
         public static Location Location
         {
             get
             {
-                return location != Location.None ? location :
+                location = location != Location.None ? location :
                     (Location)Enum.Parse(typeof(Location), TestContext.Parameters["Location"]);
+                return location;
             }
         }
         public static Platform Plaform
         {
             get
             {
-                return platform != Platform.None ? platform :
+                platform =  platform != Platform.None ? platform :
                     (Platform)Enum.Parse(typeof(Platform), TestContext.Parameters["Platform"]);
+                return platform;
             }
         }
         public static string BaseUrl
         {
             get
             {
-                IConfiguration config = new ConfigurationBuilder()
-                    .AddJsonFile("appsettings.json").Build();
-
-                return baseUrl ?? (config.GetSection(Environment.ToString()) ??
+                return baseUrl ?? (Configuration.GetSection(Environment.ToString()) ??
                     throw new Exception("The environment is not set in runsettings file." +
                     "Please update your runsettings file"))["BaseUrl"];
                 //var url = config[$"{Environment.ToString()}:BaseUrl"];
