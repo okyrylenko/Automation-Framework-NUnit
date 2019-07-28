@@ -14,6 +14,7 @@ namespace Automation.UI.Trulia.Test
         {
             var driver = new ChromeDriver(@"C:\Users\Alex\Desktop");
             driver.Navigate().GoToUrl($"https://www.{TestSettings.BaseUrl}.com");
+            var v = TestSettings.Configuration;
             Thread.Sleep(1000);
             driver.Quit();
         }
