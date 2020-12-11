@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Automation.UI.Foudation\Automation.UI.Foudation.csproj" />
+    <ProjectReference Include="..\Automation.UI.Trulia.Pages\Automation.UI.IHS.Pages.csproj" />
   </ItemGroup>
 
   <ItemGroup>

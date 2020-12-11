@@ -2,16 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Automation.UI.Foudation.Enums
-{
-   public enum Browser
-    {
+namespace Automation.UI.Foudation.Enums    {    public enum BrowserType        {
         None,
         Chrome,
         IE,
         Firefox,
         Edge,
         Safari,
-        Opera
-    }
-}
+        Opera        }    }
