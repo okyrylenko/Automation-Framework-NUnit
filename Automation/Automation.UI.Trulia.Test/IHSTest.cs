@@ -4,6 +4,7 @@ using NUnit.Framework;
 using Automation.UI.Foudation;
 
 namespace Automation.UI.Trulia.Test    {
+    [TestFixture]
     public class IHSTest : BaseTest        {
         [Test]
         public void Test()            {
