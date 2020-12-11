@@ -4,17 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI.Core", "Automation.UI.Core", "{A05B2EDC-B0BD-441D-8A7D-386BF5323E29}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI.Trulia", "Automation.UI.Trulia", "{1B8F507B-4670-4917-A4F8-A4D27AF59A5E}"
 	ProjectSection(SolutionItems) = preProject
-		oleksiy.kyrylenko.runsettings = oleksiy.kyrylenko.runsettings
+		Automation.UI.Foudation\oleksiy.kyrylenko.runsettings = Automation.UI.Foudation\oleksiy.kyrylenko.runsettings
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI.IHS", "Automation.UI.IHS", "{1B8F507B-4670-4917-A4F8-A4D27AF59A5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Automation.UI", "Automation.UI", "{0B1F2656-303E-415F-85D9-C0E06511CC51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.UI.Trulia.Test", "Automation.UI.Trulia.Test\Automation.UI.Trulia.Test.csproj", "{24D80A0C-E29E-4E76-88B1-96FE7A700D1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.UI.IHS.Test", "Automation.UI.Trulia.Test\Automation.UI.IHS.Test.csproj", "{24D80A0C-E29E-4E76-88B1-96FE7A700D1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.UI.Trulia.Pages", "Automation.UI.Trulia.Pages\Automation.UI.Trulia.Pages.csproj", "{4F9A88A9-A1EF-439B-9941-7A7AE79D1F3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.UI.IHS.Pages", "Automation.UI.Trulia.Pages\Automation.UI.IHS.Pages.csproj", "{4F9A88A9-A1EF-439B-9941-7A7AE79D1F3A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Automation.UI.Foudation", "Automation.UI.Foudation\Automation.UI.Foudation.csproj", "{F2552D1F-6863-4BA4-BFD9-746C6B9931D5}"
 EndProject
