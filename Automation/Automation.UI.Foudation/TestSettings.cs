@@ -4,7 +4,8 @@ using NUnit.Framework;
 using System;
 
 namespace Automation.UI.Foudation    {
-    public static class TestSettings        {
+    public static class TestSettings
+    {
         private static string baseUrl = null;
         private static Enums.Environment env;
         private static BrowserType browser;
@@ -13,7 +14,8 @@ namespace Automation.UI.Foudation    {
         private static IConfiguration config = null;
 
         public static IConfiguration Configuration => config = config ??
-            new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();        static string v = TestContext.Parameters["Browser"];        public static BrowserType Browser => browser = browser != BrowserType.None ? browser :
+            new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+        public static BrowserType Browser => browser = browser != BrowserType.None ? browser :
                     (BrowserType)Enum.Parse(typeof(BrowserType), TestContext.Parameters["Browser"]);
 
         public static Enums.Environment Environment => env = env != Enums.Environment.None ? env :
@@ -27,4 +29,4 @@ namespace Automation.UI.Foudation    {
 
         public static string BaseUrl => baseUrl ?? (Configuration.GetSection(Environment.ToString()) ??
                     throw new Exception("The environment is not set in runsettings file." +
-                    "Please update your runsettings file"))["BaseUrl"];        }    }
+                    "Please update your runsettings file"))["BaseUrl"];    }}
