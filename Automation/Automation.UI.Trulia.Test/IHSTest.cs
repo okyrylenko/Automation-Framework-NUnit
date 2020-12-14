@@ -3,14 +3,20 @@ using NUnit.Framework;
 
 using Automation.UI.Foudation;
 
-namespace Automation.UI.Trulia.Test    {
+namespace Automation.UI.Trulia.Test
+    {
     [TestFixture]
-    public class IHSTest : BaseTest        {
+    public class IHSTest : BaseTest
+        {
         [Test]
-        public void Test()            {
+        public void Test()
+            {
 
             Assert.False(new Browser(driver, wait)
                 .OpenUrl<HomePage>()
                 .OptionsPane()
                 .ClickBackButton()
-                .IsOptionsVisible());            }        }    }
+                .IsOptionsVisible());
+            }
+        }
+    }
