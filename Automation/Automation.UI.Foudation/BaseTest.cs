@@ -17,16 +17,26 @@ namespace Automation.UI.Foudation
 
         [SetUp]
         public void SetUp()
-            {
+        {
             this.Setdriver();
             wait = new WebDriverWait(this.driver, TimeSpan.FromSeconds(10));
-            }
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            if (!TestContext.CurrentContext.Result.Outcome.Status.Equals(ResultState.Success))
+                {
+                //take screenshot, capture browser console errors, etc
+                }
+            driver.Quit();
+        }
 
         private void Setdriver()
-            {
+        {
 
             switch (TestSettings.Browser)
-                {
+            {
 
                 case Enums.BrowserType.Firefox:
                     driver = new FirefoxDriver(); //different FireFoxOptions can be inserted
@@ -37,18 +47,9 @@ namespace Automation.UI.Foudation
                     driver = new ChromeDriver(); //different ChromeOptions can be inserted
                     driver.Manage().Window.Maximize();
                     break;
-                }
-
             }
 
-        [TearDown]
-        public void TearDown()
-            {
-            if (!TestContext.CurrentContext.Result.Outcome.Status.Equals(ResultState.Success))
-                {
-                //take screenshot, capture browser console errors, etc
-                }
-            driver.Quit();
-            }
         }
+
     }
+}

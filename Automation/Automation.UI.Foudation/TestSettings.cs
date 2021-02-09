@@ -7,7 +7,7 @@ namespace Automation.UI.Foudation
     {
     public static class TestSettings
     {
-        private static string baseUrl = null;
+        private static string baseUrl = string.Empty;
         private static Enums.Environment env;
         private static BrowserType browser;
         private static Location location;
@@ -29,8 +29,21 @@ namespace Automation.UI.Foudation
         public static Platform Plaform => platform = platform != Platform.None ? platform :
                     (Platform)Enum.Parse(typeof(Platform), TestContext.Parameters["Platform"]);
 
-        public static string BaseUrl => baseUrl ?? (Configuration.GetSection(Environment.ToString()) ??
-                    throw new Exception("The environment is not set in runsettings file." +
-                    "Please update your runsettings file"))["BaseUrl"];
+        public static string BaseUrl
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(baseUrl))
+                {
+                    if (Configuration.GetSection(Environment.ToString()) == null)
+                    {
+                        throw new Exception("The environment is not set in runsettings file.Please update your runsettings file");
+                    }
+
+                }
+                baseUrl = Configuration.GetSection(Environment.ToString())["BaseUrl]"].ToString();
+                return baseUrl;
+            }
+        }
     }
 }
